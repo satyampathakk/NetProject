@@ -1,0 +1,35 @@
+@page
+@model myapp.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Remarks</th>
+            <th>Request Time</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var detail in Model.Details)
+    {
+        <tr>
+            <td>@detail.Id</td>
+            <td>@detail.Name</td>
+            <td>@detail.Email</td>
+            <td>@detail.PhoneNumber</td>
+            <td>@detail.Remarks</td>
+            <td>@detail.RequestTime</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a href="/api/details/csv" download="details.csv">Download CSV</a>
